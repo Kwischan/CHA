@@ -3,7 +3,7 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 from keras.models import load_model
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
+from transformers import TFGPT2LMHeadModel, TFGPT2Tokenizer
 
 # Set page title and favicon
 st.set_page_config(page_title="Crop Health Assessment App", page_icon="🌱")
@@ -21,8 +21,8 @@ model3 = load_model('official-models/SugarcaneModel-1.h5')  # saved model from t
 model4 = load_model('official-models/PepperModel.h5')  # saved model from training
 
 # Load GPT-2 model and tokenizer
-model_gpt2 = GPT2LMHeadModel.from_pretrained("gpt2")
-tokenizer_gpt2 = GPT2Tokenizer.from_pretrained("gpt2")
+model_gpt2 = TFGPT2LMHeadModel.from_pretrained("gpt2")
+tokenizer_gpt2 = TFGPT2Tokenizer.from_pretrained("gpt2")
 
 Lettuce_names = ["lettuce_BacterialLeafSpot", "lettuce_BotrytisCrownRot", "lettuce_DownyMildew", "lettuce_Healthy"]
 
